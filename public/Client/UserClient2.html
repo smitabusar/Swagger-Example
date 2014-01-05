@@ -1,0 +1,23 @@
+<html>
+	<head>
+		<title>Swagger Client Demo</title>
+		<script src='../../node_modules/swagger-client/lib/shred.bundle.js' type='text/javascript'></script>
+		<script src='../../node_modules/swagger-client/lib/swagger.js' type='text/javascript'></script>
+		<script type="text/javascript">
+  			window.swagger = new SwaggerApi({url: "http://localhost:8002/api-docs.json"});
+  			swagger.build();
+
+  
+		  success = function(data) {
+		    document.getElementById("mydata").innerHTML = data.content.data;
+		  }
+
+		  function getUser() {
+		    swagger.apis.user.getUserById({userId:1}, success);
+		  }
+		</script></head>
+	<body>
+		<div id="mydata"></div>
+	</body>
+
+</html>
